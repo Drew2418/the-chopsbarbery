@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - The Chops Barbery{% endblock %}
+
+{% block body %}
+
+<style>
+  html { scroll-behavior: smooth; }
+</style>
+
+<!-- HERO -->
+<section style="position:relative; height:100vh; width:100%; overflow:hidden;">
+  <img src="/static/images/hero1.jpg"
+       alt="Barber Shop"
+       style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
+  <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4); z-index:5;"></div>
+  <div class="hero-content" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; z-index:10; color:white;">
+    <h1 style="font-family:'Great Vibes',cursive; font-size:100px; color:#cc3b3b; text-shadow:2px 2px 5px black;">The Chops Barbery</h1>
+    <p style="font-family: 'Great Vibes',cursive; font-size:55px; color:#992828; text-shadow:2px 2px 5px black;">In Fair Oaks Ranch, Texas</p>
+  </div>
+  <div class="address-text" style="position:absolute; bottom:20px; left:20px; z-index:20; color:#ddd; font-size:25px; text-shadow:1px 1px 3px black; font-family:Tahoma, serif;">
+    28255 W I-10 Frontage Rd, Unit 105<br>Fair Oaks Ranch, TX 78006
+  </div>
+  <div class="social-icons" style="position:absolute; bottom:20px; right:20px; z-index:20; display:flex; gap:15px;">
+    <a href="https://www.facebook.com/thechopsbarbery/" target="_blank"><img src="/static/icons/facebook_icon.png" alt="Facebook" style="width:50px; filter:drop-shadow(0 0 3px black);"></a>
+    <a href="https://www.instagram.com/thechopsbarbery/" target="_blank"><img src="/static/icons/instagram_icon.png" alt="Instagram" style="width:50px; filter:drop-shadow(0 0 3px black);"></a>
+  </div>
+</section>
+
+<!-- ABOUT US -->
+<section id="about-us" style="padding:60px 20px; background-color:#1a1a1a;">
+  <div style="display:flex; align-items:center; justify-content:center; gap:30px; max-width:1000px; margin:0 auto; flex-wrap:wrap;">
+    <div style="flex:1; min-width:300px; text-align:center;">
+      <h2 style="font-size:80px; font-family:'Great Vibes',cursive; margin-bottom:20px; color:#ddd;">About Us</h2>
+      <p style="font-size:18px; color:#777777; line-height:1.6;">
+        At <strong>The Chops Barbery</strong>, we bring traditional craftsmanship and modern style
+        to Fair Oaks Ranch. Our barbers take pride in delivering sharp cuts, professional service,
+        and a relaxed environment. Whether it’s your first visit or your fiftieth, you'll feel
+        right at home in our chair.
+      </p>
+    </div>
+    <div style="flex:1; min-width:300px; text-align:center;">
+      <img src="/static/images/image3.jpg" alt="Barber shop interior" style="width:100%; max-width:450px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.15);">
+    </div>
+  </div>
+</section>
+
+<!-- BARBERS -->
+<section id="team" style="padding:20px 20px 40px 20px; background-color:#111111;">
+  <div style="max-width:1000px; margin:0 auto; text-align:center;">
+    <h2 style="font-size:120px; font-family:'Great Vibes',cursive; margin-bottom:5px; color:#ddd;">Barbers</h2>
+    <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px; text-align:center;">
+        <img src="/static/images/image2.png" alt="Paul" style="width:100%; max-width:250px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.15); margin:0;">
+        <h3 style="color:#ddd; font-family:'Great Vibes',cursive; font-size:55px; margin-top:5px;">Paul</h3>
+      </div>
+      <div style="flex:1; min-width:200px; text-align:center;">
+        <img src="/static/images/jacob1.6.jpg" alt="Jacob" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 0 20px rgba(204,59,59,0.3); transform:scale(1.1); margin:15px 0;">
+        <h3 style="color:#ddd; font-family:'Great Vibes',cursive; font-size:55px; margin-top:5px;">Jacob</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--SERVICES -->
+<section id="services" style="padding:60px 20px; background-color:#1a1a1a;">
+
+  <!-- Centered Title -->
+  <div style="max-width:1000px; margin:0 auto; text-align:center;">
+    <h2 style="font-size:120px; font-family:'Great Vibes',cursive; color:#ddd; margin-bottom:40px;">Services</h2>
+  </div>
+
+  <!-- Services + Images Container -->
+  <div style="max-width:1200px; margin:0 auto; display:flex; gap:40px; align-items:flex-start; flex-wrap:wrap;">
+
+    <!-- LEFT: Services Grid -->
+    <div style="flex:2; min-width:500px;">
+      <div class="service-grid">
+        <!-- FULL SERVICE -->
+        <div class="service-card" onclick="openServiceModal('Full Service','Haircut + Shampoo + Neck Shave','$40','45 min','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/S2W7GVIVVBXY7RXKQEUN6XEF')">
+          <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.64,7.64L2,0L0,2l7.64,7.64L0,17.28l2,2l7.64-7.64l7.64,7.64l2-2l-7.64-7.64L22,2l-2-2L12.36,7.64L9.64,7.64z"/></svg>
+          <div class="service-title">FULL SERVICE</div>
+          <div class="service-desc">Haircut, shampoo, and hot towel shave</div>
+        </div>
+
+        <!-- HOT TOWEL SHAVE -->
+        <div class="service-card" onclick="openServiceModal('Hot Towel Shave','Classic face shave','$30','30 min','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/35DHT54XTH2RNA75FKOAHR6O')">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="10" y="2" width="4" height="20"/>
+              <path d="M10 6 L14 2 M10 10 L14 6 M10 14 L14 10 M10 18 L14 14" stroke="currentColor" stroke-width="1"/>
+            </svg>
+
+            <div class="service-title">HOT TOWEL SHAVE</div>
+          <div class="service-desc">Classic face shave with hot towels</div>
+        </div>
+
+        <!-- OVERHAUL -->
+        <div class="service-card" onclick="openServiceModal('Overhaul','Full service cut + hot towel shave','$60','60 min','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/BPY4RPG53WEBEHMU6HYFP6DO')">
+          <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M2,3v18h20V3H2zm2,2h16v14H4V5z"/></svg>
+          <div class="service-title">OVERHAUL</div>
+          <div class="service-desc">Haircut + hot towel shave package</div>
+        </div>
+
+        <!-- SIDECAR SET-UP -->
+        <div class="service-card" onclick="openServiceModal('Sidecar Set-up','Father & son haircuts','$60','1 HOUR 15 MIN','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/ITHA6MFJB23LVOITEJ564UI5')">
+          <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zM8 13c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.02 1.97 3.45V19h6v-2.5C23 14.17 18.33 13 16 13z"/></svg>
+          <div class="service-title">SIDECAR SET-UP</div>
+          <div class="service-desc">Father & son cut combo</div>
+        </div>
+
+        <!-- TUNE-UP -->
+        <div class="service-card" onclick="openServiceModal('Tune-Up','A made-to-order haircut without shampoo & neck shave','$35','30 MIN','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/FWCEQRFCV4F67RVHYSHAZW62')">
+          <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2C10.9,2 10,2.9 10,4V20C10,21.1 10.9,22 12,22C13.1,22 14,21.1 14,20V4C14,2.9 13.1,2 12,2Z"/></svg>
+          <div class="service-title">TUNE-UP</div>
+          <div class="service-desc">Made-to-order haircut without shampoo & neck shave</div>
+        </div>
+
+        <!-- TOUCH-UP -->
+        <div class="service-card" onclick="openServiceModal('Touch-Up','Grey coverage & roots touch-up','$30','45 MIN','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/7SJVXMIQKCV254UADQSYWU6D')">
+          <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M5 4h14v2H5V4zm0 4h14v2H5V8zm0 4h14v2H5v-2zm0 4h14v2H5v-2z"/></svg>
+            <div class="service-title">TOUCH-UP</div>
+          <div class="service-desc">Grey coverage, roots touch-up</div>
+        </div>
+
+        <!-- SKIN FADE -->
+        <div class="service-card" onclick="openServiceModal('Skin Fade','Skin fade haircut with shampoo & neck shave','$45','60 min','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/TIBGCIHZ4WUU7EVPI62KFGDV')">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 4l18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M21 3c0 4-8 14-14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <div class="service-title">SKIN FADE</div>
+          <div class="service-desc">Skin fade haircut with shampoo & neck shave</div>
+        </div>
+
+        <!-- THE BEARD BALANCE & TRIM -->
+        <div class="service-card" onclick="openServiceModal('The Beard Balance & Trim','Beard shaping and line up','$25','30 MIN','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/BYUQCDGPIW27KYVNL3PL2SE4')">
+          <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-4 0-7 4-7 8 0 5 3 10 7 10s7-5 7-10c0-4-3-8-7-8z"/></svg>
+          <div class="service-title">BEARD BALANCE & TRIM</div>
+          <div class="service-desc">Beard shaping and line up</div>
+        </div>
+
+        <!-- OIL CHANGE -->
+        <div class="service-card" onclick="openServiceModal('Oil Change','Haircuts for little men, ages 3-12','$30','30 MIN','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/W5YHZBV75TAVCEKOKHCZ4OG4')">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="2" width="12" height="20" rx="3"/>
+              <rect x="9" y="6" width="6" height="4"/>
+            </svg>
+            <div class="service-title">OIL CHANGE</div>
+          <div class="service-desc">Haircuts for little men, ages 3-12</div>
+        </div>
+
+      </div> <!-- /.service-grid -->
+    </div> <!-- /.left services -->
+
+      <!-- POPUP MODAL -->
+    <div id="serviceModal" class="modal-overlay" onclick="closeServiceModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <h3 id="serviceModalTitle"></h3>
+        <p id="serviceModalDesc"></p>
+        <p><strong>Price:</strong> <span id="serviceModalPrice"></span></p>
+        <p><strong>Time:</strong> <span id="serviceModalTime"></span></p>
+        <button id="serviceModalBtn" class="modal-btn">Book Now</button>
+        <button onclick="closeServiceModal()" class="modal-close">Close</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: 3 Images Stack -->
+    <div style="flex:1; min-width:200px; display:flex; flex-direction:column; gap:20px;">
+      <img src="/static/images/image18.jpg" alt="Service 1" style="width:100%; border-radius:0px; box-shadow:0 0 10px rgba(0,0,0,0.3);">
+      <img src="/static/images/image17.jpg" alt="Service 2" style="width:100%; border-radius:0px; box-shadow:0 0 10px rgba(0,0,0,0.3);">
+      <img src="/static/images/image16.jpg" alt="Service 3" style="width:100%; border-radius:0px; box-shadow:0 0 10px rgba(0,0,0,0.3);">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- STYLES (keep in your page) -->
+<style>
+
+.hero-section {
+    padding-top: 120px; /* or equal to navbar height + some buffer */
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  width: 100%; /* full width of flex item */
+  margin: 0;    /* remove centering */
+}
+
+.service-card {
+  background-color: #222;
+  padding: 25px;
+  border-radius: 12px;
+  color: #ddd;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 1px solid #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card:hover {
+  background-color: #e74c3c;
+  color: white;
+  transform: scale(1.03);
+  border-color: #e74c3c;
+}
+
+/* ICON */
+.service-icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+}
+
+/* TITLE */
+.service-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-top: 5px;
+}
+
+/* DESCRIPTION */
+.service-desc {
+  font-size: 18px;
+  margin-top: 8px;
+  color: #bbb;
+}
+
+/* MODAL STYLING */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal-content {
+  background: #fff;
+  color: #111;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+}
+
+.modal-btn {
+  background: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+}
+
+.modal-btn:hover { background: #c0392b; }
+
+.modal-close {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .service-grid { grid-template-columns: 1fr; }
+  .service-title { font-size: 24px; }
+  .service-desc { font-size: 16px; }
+  .service-icon { width: 38px; height: 38px; }
+}
+</style>
+
+<!-- JAVASCRIPT -->
+<script>
+function openServiceModal(name, desc, price, time, link) {
+  document.getElementById('serviceModalTitle').innerText = name;
+  document.getElementById('serviceModalDesc').innerText = desc;
+  document.getElementById('serviceModalPrice').innerText = price;
+  document.getElementById('serviceModalTime').innerText = time;
+
+  const btn = document.getElementById('serviceModalBtn');
+  btn.onclick = () => window.open(link, '_blank');
+
+  document.getElementById('serviceModal').classList.add('active');
+}
+
+function closeServiceModal() {
+  document.getElementById('serviceModal').classList.remove('active');
+}
+</script>
+
+
+
+<!-- CONTACT US -->
+<section id="contact-us" style="padding:60px 20px; background:#1a1a1a;">
+  <div style="display:flex; flex-wrap:wrap; gap:30px; max-width:1000px; margin:0 auto; justify-content:center;">
+    <div style="flex:1; min-width:300px; text-align:center;">
+      <img src="/static/images/hero3.jpg"
+           alt="Contact Image"
+           style="width:100%; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.15);">
+    </div>
+    <div style="flex:1; min-width:300px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13860.280356534127!2d-98.67576737386379!3d29.71772893870072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c758cac864655%3A0x13d353ec4bce5688!2sThe%20Chops%20Barbery!5e0!3m2!1sen!2sus!4v1764268812649!5m2!1sen!2sus"
+        width="100%" height="450" style="border:0; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.15);" allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Responsive -->
+<style>
+  @media (max-width: 768px) {
+    .hero-content h1 { font-size:55px !important; }
+    .hero-content p { font-size:18px !important; }
+  }
+</style>
+
+{% endblock %}
