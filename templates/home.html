@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - The Chops Barbery{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<!-- HERO -->
+<section class="hero">
+    <img src="{{ url_for('static', filename='images/hero1.jpg') }}" alt="Barber Shop">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>The Chops Barbery</h1>
+        <p>In Fair Oaks Ranch, Texas</p>
+    </div>
+    <div class="address-text">
+        28255 W I-10 Frontage Rd, Unit 105<br>Fair Oaks Ranch, TX 78006
+    </div>
+</section>
+
+<!-- ABOUT US -->
+<section id="about-us">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>At <strong>The Chops Barbery</strong>, we bring traditional craftsmanship and modern style to Fair Oaks Ranch. Our barbers take pride in delivering sharp cuts, professional service, and a relaxed environment. Whether it’s your first visit or your fiftieth, you'll feel right at home in our chair.</p>
+        </div>
+        <div class="about-image">
+            <img src="{{ url_for('static', filename='images/image3.jpg') }}" alt="Barber shop interior">
+        </div>
+    </div>
+</section>
+
+<!-- BARBERS -->
+<section id="team">
+    <div class="barbers-container">
+        <h2>Barbers</h2>
+        <div class="barbers-grid">
+            <div class="barber">
+                <img src="{{ url_for('static', filename='images/paul1.jpg') }}" alt="Paul">
+                <h3>Paul</h3>
+            </div>
+            <div class="barber">
+                <img src="{{ url_for('static', filename='images/jacob1.6.jpg') }}" alt="Jacob">
+                <h3>Jacob</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2 class="services-title">Services</h2>
+    <div class="services-wrapper">
+        <div class="service-grid">
+            <!-- All 9 service cards – exactly as before -->
+            <div class="service-card" onclick="openServiceModal('Full Service','Haircut + Shampoo + Neck Shave','$40','45 min','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/S2W7GVIVVBXY7RXKQEUN6XEF')">
+                <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.64,7.64L2,0L0,2l7.64,7.64L0,17.28l2,2l7.64-7.64l7.64,7.64l2-2l-7.64-7.64L22,2l-2-2L12.36,7.64L9.64,7.64z"/></svg>
+                <div class="service-title">FULL SERVICE</div>
+                <div class="service-desc">Haircut, shampoo, and hot towel shave</div>
+            </div>
+            <div class="service-card" onclick="openServiceModal('Hot Towel Shave','Classic face shave','$30','30 min','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/35DHT54XTH2RNA75FKOAHR6O')">
+                <svg class="service-icon" viewBox="0 0 24 24"><rect x="10" y="2" width="4" height="20"/><path d="M10 6 L14 2 M10 10 L14 6 M10 14 L14 10 M10 18 L14 14" stroke="currentColor" stroke-width="1"/></svg>
+                <div class="service-title">HOT TOWEL SHAVE</div>
+                <div class="service-desc">Classic face shave with hot towels</div>
+            </div>
+            <div class="service-card" onclick="openServiceModal('Overhaul','Full service cut + hot towel shave','$60','60 min','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/BPY4RPG53WEBEHMU6HYFP6DO')">
+                <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M2,3v18h20V3H2zm2,2h16v14H4V5z"/></svg>
+                <div class="service-title">OVERHAUL</div>
+                <div class="service-desc">Haircut + hot towel shave package</div>
+            </div>
+            <div class="service-card" onclick="openServiceModal('Sidecar Set-up','Father & son haircuts','$60','1 HOUR 15 MIN','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/ITHA6MFJB23LVOITEJ564UI5')">
+                <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zM8 13c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.02 1.97 3.45V19h6v-2.5C23 14.17 18.33 13 16 13z"/></svg>
+                <div class="service-title">SIDECAR SET-UP</div>
+                <div class="service-desc">Father & son cut combo</div>
+            </div>
+            <div class="service-card" onclick="openServiceModal('Tune-Up','A made-to-order haircut without shampoo & neck shave','$35','30 MIN','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/FWCEQRFCV4F67RVHYSHAZW62')">
+                <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2C10.9,2 10,2.9 10,4V20C10,21.1 10.9,22 12,22C13.1,22 14,21.1 14,20V4C14,2.9 13.1,2 12,2Z"/></svg>
+                <div class="service-title">TUNE-UP</div>
+                <div class="service-desc">Made-to-order haircut without shampoo & neck shave</div>
+            </div>
+            <div class="service-card" onclick="openServiceModal('Touch-Up','Grey coverage & roots touch-up','$30','45 MIN','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/7SJVXMIQKCV254UADQSYWU6D')">
+                <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M5 4h14v2H5V4zm0 4h14v2H5V8zm0 4h14v2H5v-2zm0 4h14v2H5v-2z"/></svg>
+                <div class="service-title">TOUCH-UP</div>
+                <div class="service-desc">Grey coverage, roots touch-up</div>
+            </div>
+            <div class="service-card" onclick="openServiceModal('Skin Fade','Skin fade haircut with shampoo & neck shave','$45','60 min','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/TIBGCIHZ4WUU7EVPI62KFGDV')">
+                <svg class="service-icon" viewBox="0 0 24 24"><path d="M3 4l18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 3c0 4-8 14-14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <div class="service-title">SKIN FADE</div>
+                <div class="service-desc">Skin fade haircut with shampoo & neck shave</div>
+            </div>
+            <div class="service-card" onclick="openServiceModal('The Beard Balance & Trim','Beard shaping and line up','$25','30 MIN','https://book.squareup.com/app CRAointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/BYUQCDGPIW27KYVNL3PL2SE4')">
+                <svg class="service-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-4 0-7 4-7 8 0 5 3 10 7 10s7-5 7-10c0-4-3-8-7-8z"/></svg>
+                <div class="service-title">BEARD BALANCE & TRIM</div>
+                <div class="service-desc">Beard shaping and line up</div>
+            </div>
+            <div class="service-card" onclick="openServiceModal('Oil Change','Haircuts for little men, ages 3-12','$30','30 MIN','https://book.squareup.com/appointments/3ul10ylsvb3kl2/location/ZJ855P5BB5REF/services/W5YHZBV75TAVCEKOKHCZ4OG4')">
+                <svg class="service-icon" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><rect x="9" y="6" width="6" height="4"/></svg>
+                <div class="service-title">OIL CHANGE</div>
+                <div class="service-desc">Haircuts for little men, ages 3-12</div>
+            </div>
+        </div>
+
+        <!-- Right images -->
+        <div class="service-images">
+            <img src="{{ url_for('static', filename='images/image18.jpg') }}" alt="Service">
+            <img src="{{ url_for('static', filename='images/image17.jpg') }}" alt="Service">
+            <img src="{{ url_for('static', filename='images/image16.jpg') }}" alt="Service">
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="serviceModal" class="modal-overlay" onclick="closeServiceModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h3 id="serviceModalTitle"></h3>
+            <p id="serviceModalDesc"></p>
+            <p><strong>Price:</strong> <span id="serviceModalPrice"></span></p>
+            <p><strong>Time:</strong> <span id="serviceModalTime"></span></p>
+            <button id="serviceModalBtn" class="modal-btn">Book Now</button>
+            <button onclick="closeServiceModal()" class="modal-close">Close</button>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact-us">
+    <div class="contact-container">
+        <div class="contact-image">
+            <img src="{{ url_for('static', filename='images/hero3.jpg') }}" alt="Contact">
+        </div>
+        <div class="contact-info">
+            <p class="email">theporkchopbarber@gmail.com</p>
+            <p class="address">28255 IH-10 W. Ste. 105,<br>Fair Oaks Ranch, TX 78006</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13860.280356534127!2d-98.67576737386379!3d29.71772893870072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c758cac864655%3A0x13d353ec4bce5688!2sThe%20Chops%20Barbery!5e0!3m2!1sen!2sus!4v1764268812649!5m2!1sen!2sus"
+                    allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Modal JS -->
+<script>
+function openServiceModal(name, desc, price, time, link) {
+    document.getElementById('serviceModalTitle').textContent = name;
+    document.getElementById('serviceModalDesc').textContent = desc;
+    document.getElementById('serviceModalPrice').textContent = price;
+    document.getElementById('serviceModalTime').textContent = time;
+    document.getElementById('serviceModalBtn').onclick = () => window.open(link, '_blank');
+    document.getElementById('serviceModal').classList.add('active');
+}
+function closeServiceModal() {
+    document.getElementById('serviceModal').classList.remove('active');
+}
+</script>
+
+{% endblock %}
