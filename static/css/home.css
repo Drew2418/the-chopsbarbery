@@ -27,6 +27,7 @@ html { scroll-behavior: smooth; }
     text-align: center;
     z-index: 10;
     color: white;
+    padding: 0 10px;
 }
 .hero-content h1 {
     font-family: 'Great Vibes', cursive;
@@ -62,11 +63,12 @@ html { scroll-behavior: smooth; }
     margin: 0 auto;
     flex-wrap: wrap;
 }
-.about-text { flex: 1; min-width: 300px; text-align: center; }
+.about-text { flex: 1; min-width: 0; text-align: center; }
 .about-text h2 { font-size: 80px; font-family: 'Great Vibes', cursive; margin-bottom: 20px; color: #ddd; }
 .about-text p { font-size: 18px; color: #777; line-height: 1.6; }
 .about-image img {
-    width: 100%; max-width: 450px;
+    width: 100%;
+    max-width: 450px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
@@ -76,9 +78,10 @@ html { scroll-behavior: smooth; }
 .barbers-container { max-width: 1000px; margin: 0 auto; text-align: center; }
 .barbers-container h2 { font-size: 120px; font-family: 'Great Vibes', cursive; color: #ddd; margin-bottom: 5px; }
 .barbers-grid { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-.barber { flex: 1; min-width: 200px; text-align: center; }
+.barber { flex: 1; min-width: 0; text-align: center; }
 .barber img {
-    width: 100%; max-width: 300px;
+    width: 100%;
+    max-width: 300px;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(204,59,59,0.3);
     transform: scale(1.1);
@@ -106,7 +109,7 @@ html { scroll-behavior: smooth; }
     align-items: flex-start; flex-wrap: wrap;
 }
 .service-grid {
-    flex: 2; min-width: 500px;
+    flex: 2; min-width: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
@@ -140,7 +143,7 @@ html { scroll-behavior: smooth; }
 .service-title { font-size: 28px; font-weight: 800; margin-top: 5px; }
 .service-desc { font-size: 18px; margin-top: 8px; color: #bbb; }
 .service-images {
-    flex: 1; min-width: 200px;
+    flex: 1; min-width: 0;
     display: flex; flex-direction: column; gap: 20px;
 }
 .service-images img {
@@ -201,14 +204,10 @@ html { scroll-behavior: smooth; }
     border-radius: 5px; cursor: pointer;
 }
 
-/* RESPONSIVE – replace your entire @media section with this */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-    .services-wrapper {
-        flex-direction: column;
-    }
+    .service-grid { grid-template-columns: 1fr; }
+    .services-wrapper { flex-direction: column; }
     .service-images { display: none; }
 }
 
@@ -223,21 +222,28 @@ html { scroll-behavior: smooth; }
 
     .barber h3 { font-size: 40px; }
 
-    .service-card {
-        padding: 20px;
-    }
+    .service-card { padding: 20px; }
     .service-title { font-size: 24px; }
     .service-desc { font-size: 16px; }
 }
 
 @media (max-width: 480px) {
+    .hero { min-height: 60vh; }
     .hero-content h1 { font-size: 48px; }
     .hero-content p { font-size: 22px; }
     .address-text { font-size: 16px; }
 
-    .about-text h2,
-    .barbers-container h2,
-    .services-title { font-size: 55px !important; }
+    .about-container { flex-direction: column; }
+    .about-text, .about-image { min-width: 100%; }
 
+    .barbers-grid { flex-direction: column; }
+    .barber img { max-width: 150px; }
+    .barber h3 { font-size: 35px; }
+
+    .services-wrapper { flex-direction: column; }
+    .service-grid { min-width: 0; grid-template-columns: 1fr; }
+    .service-images { display: none; }
+
+    .contact-info p { font-size: 16px; }
     section { padding: 50px 15px !important; }
 }
