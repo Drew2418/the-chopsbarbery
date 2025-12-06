@@ -255,7 +255,12 @@ body {
     .logo img { height: 55px; }
     .navbar.shrink .logo img { height: 42px; }
     .book-btn, .footer-book-btn { padding: 12px 20px; font-size: 15px; }
-    .phone { font-size: 17px; }
+    .phone .phone-text {
+        display: none;       /* hide phone number text */
+    }
+    .phone {
+        gap: 0;  /* no space between icon and button */
+        }
 }
 
 /* Ultra-tight version – exactly like your original but still responsive */
