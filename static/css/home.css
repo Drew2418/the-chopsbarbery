@@ -232,7 +232,7 @@ html { scroll-behavior: smooth; }
     .hero { min-height: 60vh; }
     .hero-content { padding: 0 5px; }
     .hero-content h1 {
-        font-size: 32px;
+        font-size: 48px;
         white-space: nowrap;
         overflow: hidden;
         }
